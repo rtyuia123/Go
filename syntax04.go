@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-//소수 판정 프로그램 v 0.4
+//소수 판정 프로그램 v 0.6
 func main() {
 	seed := time.Now().Unix()
 	rand.Seed(seed)
@@ -18,8 +18,9 @@ func main() {
 	for i := 2; i < number; i++ {
 		if number%i == 0 {
 			isPrime = false
+			break // 첫 약수가 발견되면 반복 종료
 		}
-		fmt.Print(i, " ")
+		// fmt.Print(i, " ")
 	}
 
 	if isPrime { // 비교 연산자 제거
