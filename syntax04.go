@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-//소수 판정 프로그램 v 0.3
+//소수 판정 프로그램 v 0.4
 func main() {
 	seed := time.Now().Unix()
 	rand.Seed(seed)
@@ -18,11 +18,11 @@ func main() {
 	for i := 2; i < number; i++ {
 		if number%i == 0 {
 			isPrime = false
-			// count = count + 1
 		}
+		fmt.Print(i, " ")
 	}
 
-	if isPrime == true {
+	if isPrime { // 비교 연산자 제거
 		fmt.Println(number, "는 소수입니다.")
 	} else {
 		fmt.Println(number, "는 소수가 아닙니다.")
